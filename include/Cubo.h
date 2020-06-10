@@ -1,0 +1,50 @@
+#ifndef _CUBO_H_
+#define _CUBO_H_
+
+using namespace std;
+
+typedef struct Cubo {
+    float Lado;
+    string color;
+    int numeroOrden;
+}c;
+
+//REQUIERE QUE HAYA UN CUBO CREADO Y UN VALOR PARA ASIGNAR
+void setLado(Cubo &c, float dato);
+//ASIGNA EL VALOR AL CUBO
+
+//REQUIERE QUE HAYA UN CUBO CREADO Y UN VALOR PARA ASIGNAR
+void setColorCubo(Cubo &c, string dato);
+//ASIGNA EL VALOR AL CUBO
+
+//REQUIERE QUE HAYA UN CUBO CREADO Y UN VALOR PARA ASIGNAR
+void setNroCubo(Cubo &cubo, int dato);
+//ASIGNA EL VALOR AL CUBO
+
+//REQUIERE QUE HAYA UN CUBO CREADO
+float getLado(Cubo &c);
+//DEVUELVE EL VALOR QUE TIENE ASIGNADO
+
+//REQUIERE QUE HAYA UN CUBO CREADO
+string getColorCubo(Cubo &c);
+//DEVUELVE EL VALOR QUE TIENE ASIGNADO
+
+//REQUIERE QUE HAYA UN CUBO CREADO
+int getNroCubo(Cubo &cubo);
+//DEVUELVE EL VALOR QUE TIENE ASIGNADO
+
+//REQUIERE QUE HAYA UN CUBO CREADO
+float areaCubo(Cubo &c);
+//CALCULA EL AREA DEL CUBO
+
+//REQUIERE QUE HAYA UN CUBO CREADO
+void borrarCubo(Cubo &c);
+//ELIMINA EL CUBO
+
+//REQUIERE QUE HAYA UN CUBO CREADO
+void mostrarCubo(Cubo &c);
+//MUESTRA POR CONSOLA LOS VALORES QUE TIENE EL CUBO
+
+
+
+#endif
