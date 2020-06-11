@@ -17,11 +17,25 @@
 
 using namespace std;
 
+//REQUIERE EL NOMBRE DE UN ARCHIVO TXT, Y LAS LISTAS CREADAS
 int cargarListasConArchivo(string texto, ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
+//LAS LISTAS SE CARGARAN CON LOS ELEMNTOS SEGUN LA INFORMACION DEL ARCHIVO
+
+//SE UTILIZA DENTRO DE LA FUNCION CARGARLISTASCONARCHIVO Y REQUIERE LAS LISTAS CREADAS
 void separarData(string texto, int numeroOrden, ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
+//SEPARA LAS PALABRAS DE CADA ORACION DEL ARCHIVO TXT
+
+//REQUIERE LA CANTIDAD DE ELEMENTOS QUE SE PRODUCEN, UN COLOR Y LAS LISTAS CREADAS
 void mostrarOrdenColor(int cantidad, string color, ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
-int encuentrarMinEntreListas ( ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
-void ordenarListasPorCantidad (ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
+//MUESTRA POR CONSOLA LOS ELEMENTOS SEGUN SE FUERON CREANDO
+
+//SE UTILIZA EN LA FUNCION ORDENARLISTASPORCANTIDAD Y REQUIERE LAS LISTAS CREADAS Y ORDENADAS POR CANTIDAD
+int encuentrarMaxEntreListas ( ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
+//ENCUENTRA EL ELEMENTO DE MAXIMO VALOR ENTRE TODAS LAS LISTAS
+
+//REQUIERE LAS LISTAS CREADAS
+void mostrarListasPorCantidad (ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos);
+//MUESTRA POR CONSOLA LOS ELEMENTOS DE TODAS LAS LISTAS ORDENADAS POR CANTIDAD DE PLASTICO UTILIZADO
 
 int main() {
     int cantidadFig = -1;
@@ -243,7 +257,7 @@ int main() {
                 break;
             }
             case 9:{
-                ordenarListasPorCantidad (triangulos, cubos, rectangulos, cilindros, circulos);
+                mostrarListasPorCantidad (triangulos, cubos, rectangulos, cilindros, circulos);
                 break;
             }
             case 10:{
@@ -469,7 +483,7 @@ void mostrarOrdenColor(int cantidad, string color, ListaTriangulo &triangulos, L
     }
 }
 
-void ordenarListasPorCantidad (ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos){
+void mostrarListasPorCantidad (ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos){
     int may = 0 ;
     int opcion = 0 ;
     bool compareCant = false ;
@@ -496,7 +510,7 @@ void ordenarListasPorCantidad (ListaTriangulo &triangulos, ListaCubo &cubos, Lis
 
     while (compareCant != true ){
     
-        opcion =  encuentrarMinEntreListas (triangulosCopia, cubosCopia, rectangulosCopia, cilindrosCopia, circulosCopia);
+        opcion =  encuentrarMaxEntreListas (triangulosCopia, cubosCopia, rectangulosCopia, cilindrosCopia, circulosCopia);
         switch (opcion){
             case 0:{
                 Triangulo t = getPrimerTriangulo(triangulosCopia);
@@ -541,7 +555,7 @@ void ordenarListasPorCantidad (ListaTriangulo &triangulos, ListaCubo &cubos, Lis
 }
 
 
-int encuentrarMinEntreListas ( ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos){
+int encuentrarMaxEntreListas ( ListaTriangulo &triangulos, ListaCubo &cubos, ListaRectangulo &rectangulos, ListaCilindro &cilindros, ListaCirculo &circulos){
     int pos = -1 ;
     int  i = 0 ;
     float mayor = -1;

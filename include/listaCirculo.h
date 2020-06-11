@@ -10,28 +10,48 @@ struct nodoCirculo{
  
 typedef struct nodoCirculo *ListaCirculo;
 
-
-void crearListaCirculo(ListaCirculo &lista);
-
+//REQUIERE QUE HAYA UNA LISTA CREADA Y RECIBE UN CIRCULO COMO PARAMETRO
 void insertarCirculoInicio(ListaCirculo &lista, Circulo circulo);
+//LA LISTA CONTIENE EL CIRCULO EN EL INICIO DE LA LISTA
 
+//REQUIERE QUE HAYA UNA LISTA CREADA Y RECIBE UN CIRCULO COMO PARAMETRO
 void insertarCirculoFinal(ListaCirculo &lista, Circulo circulo);
+//LA LISTA CONTIENE EL CIRCULO EN EL FINAL DE LA LISTA
 
+//REQUIERE QUE HAYA UNA LISTA CREADA
 void mostrarListaCirculo(ListaCirculo &lista);
+//MUESTRA POR CONSOLA CADA CIRCULO QUE CONTIENE LA LISTA
 
+//REQUIERE QUE HAYA UNA LISTA CREADA
 float plasticoTotalCirculo(ListaCirculo &lista);
+//DEVUELVE EL TOTAL DE PLASTICO UTILIZADO EN ESTA LISTA
 
+//REQUIERE QUE HAYA UNA LISTA CREADA Y UN COLOR
 float plasticoPorColorCirculo(ListaCirculo &lista, string color);
+//BUSCA DEPENDIENDO EL COLOR Y DEVUELVE EL TOTAL DE PLASTICO UTILIZADO CON ESE COLOR
 
+//
+void crearListaCirculo(ListaCirculo &lista);
+//IGUALA LA LISTA A NULL PARA 
+
+//REQUIERE QUE HAYA UNA LISTA CREADA, UN NUMERO ENTERO Y UN COLOR
 void mostrarCirculoPorNroOrdenColor(ListaCirculo &lista, int numero, string color);
+//MUESTRA UN ELEMENTO DE LA LISTA QUE COINCIDA CON LOS PARAMETROS
 
+//REQUIERE QUE HAYA UNA LISTA CREADA
 void ordenarListaPlasticoCirculo(ListaCirculo &lista);
+//ORDENA LA LISTA POR LA CANTIDAD DE PLASTICO UTILIZADO
 
+//REQUIERE QUE HAYA UNA LISTA CREADA Y QUE TENGA AL MENOS UN ELEMENTO
 void eliminarPrimeroCirculo(ListaCirculo &lista);
+//SACA EL PRIMER ELEMENTO DE LA LISTA 
 
+//REQUIERE QUE HAYA UNA LISTA CREADA Y QUE TENGA AL MENOS UN ELEMENTO
 Circulo getPrimerCirculo(ListaCirculo &lista);
+//DEVUELVE EL PRIMER ELEMENTO DE LA LISTA
 
+//REQUIERE QUE HAYA DOS LISTAS CREADAS Y QUE UNA TENGA AL MENOS UN ELEMENTO
 void copiarListaCirculo(ListaCirculo &lista, ListaCirculo &copia);
-
+//LA LISTA COPIADA CONTENDRA LOS MISMOS VALORES QUE LA LISTA A COPIAR
 
 #endif
